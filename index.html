@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/personal-website/">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Belal Mohamed - Professional Flutter Developer & Mobile App Developer. Experienced in creating cross-platform mobile applications with Firebase integration.">
+  <meta name="keywords" content="Flutter Developer, Mobile App Developer, Cross-platform Development, Firebase, Dart, iOS, Android, Web Development">
+  <meta name="author" content="Belal Mohamed">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Belal Mohamed - Flutter Developer Portfolio">
+  <meta property="og:description" content="Professional Flutter Developer specializing in cross-platform mobile applications">
+  <meta property="og:url" content="https://belalellathy.github.io">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Belal Mohamed - Flutter Developer">
+  <meta property="twitter:description" content="Professional Flutter Developer specializing in cross-platform mobile applications">
+  
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Belal Mohamed Portfolio">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  
+  <title>Belal Mohamed - Flutter Developer Portfolio</title>
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Preload critical resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Loading styles -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Roboto', sans-serif;
+      overflow: hidden;
+    }
+    
+    .loading-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+    
+    .loading-text {
+      color: white;
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+    
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    
+    .fade-out {
+      animation: fadeOut 0.5s ease-in-out forwards;
+    }
+    
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+  </style>
+  
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "297161762";
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+</head>
+<body>
+  <!-- Loading screen -->
+  <div id="loading" class="loading-container">
+    <div class="loading-text">Belal Mohamed</div>
+    <div class="loading-spinner"></div>
+  </div>
+  
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            // Hide loading screen
+            const loading = document.getElementById('loading');
+            if (loading) {
+              loading.classList.add('fade-out');
+              setTimeout(() => {
+                loading.style.display = 'none';
+              }, 500);
+            }
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+    
+    // Handle errors
+    window.addEventListener('error', function(e) {
+      console.error('Application error:', e);
+    });
+  </script>
+</body>
+</html>
