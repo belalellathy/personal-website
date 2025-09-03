@@ -113,7 +113,7 @@ class ContactSection extends StatelessWidget {
             const SizedBox(width: 15),
             _buildSocialButton(
               FontAwesomeIcons.linkedin,
-              'https://linkedin.com/in/belalellathy',
+              'https://www.linkedin.com/in/belal-mohamed-8954242b9',
               const Color(0xFF0077B5),
             ),
             const SizedBox(width: 15),

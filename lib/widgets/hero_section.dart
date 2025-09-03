@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'dart:html' as html;
 
 class HeroSection extends StatelessWidget {
   final VoidCallback? onViewWorkPressed;
@@ -151,35 +150,6 @@ class HeroSection extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 20),
-                        ElevatedButton(
-                          onPressed: _downloadCV,
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF38A169),
-                            foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 30,
-                              vertical: 15,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              const Icon(Icons.download, size: 18),
-                              const SizedBox(width: 8),
-                              Text(
-                                'Download CV',
-                                style: GoogleFonts.poppins(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(width: 20),
                         OutlinedButton(
                           onPressed: onContactPressed,
                           style: OutlinedButton.styleFrom(
@@ -258,38 +228,6 @@ class HeroSection extends StatelessWidget {
                         const SizedBox(height: 15),
                         SizedBox(
                           width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: _downloadCV,
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFF38A169),
-                              foregroundColor: Colors.white,
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 20,
-                                vertical: 12,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Icon(Icons.download, size: 18),
-                                const SizedBox(width: 8),
-                                Text(
-                                  'Download CV',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 15),
-                        SizedBox(
-                          width: double.infinity,
                           child: OutlinedButton(
                             onPressed: onContactPressed,
                             style: OutlinedButton.styleFrom(
@@ -326,11 +264,4 @@ class HeroSection extends StatelessWidget {
     );
   }
 
-  void _downloadCV() async {
-    const url = 'assets/document/Belal-Mohamed.pdf';
-    // For web deployment, create a download link
-    html.AnchorElement(href: url)
-      ..setAttribute('download', 'Belal-Mohamed-CV.pdf')
-      ..click();
-  }
 }
